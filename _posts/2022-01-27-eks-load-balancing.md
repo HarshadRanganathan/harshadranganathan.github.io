@@ -139,6 +139,50 @@ Let's look at some of the annotations that you can configure and their behaviors
 
 ### TLS Termination
 
+#### At Load Balancer Level
+
+To terminate TLS connection at Load Balancer level, perform the following actions:
+
+[1] Create a certificate in ACM for the custom domain (e.g. test.example.com) which you will be configuring in Route53 records to point to the ALB DNS name for internet-facing routing.
+
+[2] Get the ARN of the ACM certificate and configure it in the Ingress using annotation `alb.ingress.kubernetes.io/certificate-arn` (or) alternatively just specify the DNS host in the `spec.tls[*].hosts` / `spec.rules[*].host` fields for automatic certificate discovery.
+
+[3] Set the listener port for HTTPS access using `alb.ingress.kubernetes.io/listen-ports` annotation.
+
+[4] Configure suitable security policy to negotiate SSL connections with the client using `alb.ingress.kubernetes.io/ssl-policy` annotation.
+
+Sample ingress config is as below:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:...
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+spec:
+  ingressClassName: alb
+  rules:
+    - host: test.example.com
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: "app"
+                port:
+                  number: 80
+```
+
+{% include donate.html %}
+{% include advertisement.html %}
+
 ### Security Groups
 
 ### Health Checks
