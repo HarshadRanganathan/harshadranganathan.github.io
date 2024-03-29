@@ -41,6 +41,42 @@ Pre-requisites -
 
 {% include repo-card.html repo="helm-aws-load-balancer-controller" %}
 
+## Application Load Balancer
+
+{% include donate.html %}
+{% include advertisement.html %}
+
+### Annotations
+
+Let's look at some of the annotations that you can configure and their behaviors.
+
+|Annotation Example |Purpose |
+|--|--|
+|alb.ingress.kubernetes.io/scheme: internet-facing | specifies whether your LoadBalancer will be internet facing|
+|alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]' | specifies the LoadBalancer to listen on port 443 |
+|alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:... | specifies the ARN of one or more certificate managed by AWS Certificate Manager |
+|alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06 | Security Policy that should be assigned to the ALB |
+|alb.ingress.kubernetes.io/wafv2-acl-arn: arn:aws:wafv2:us-east-1:...	 | specifies ARN for the Amazon WAFv2 web ACL.|
+|alb.ingress.kubernetes.io/target-type: instance | Provision ALB in Instance mode |
+|alb.ingress.kubernetes.io/load-balancer-attributes: <br/>access_logs.s3.enabled=true,access_logs.s3.bucket=prod-logs-us-east-1,access_logs.s3.prefix=alb,idle_timeout.timeout_seconds=600 | specifies Load Balancer Attributes that should be applied to the ALB. |
+|alb.ingress.kubernetes.io/security-groups: sg-xxxxx |custom securityGroups you want to attach to ALB instead of ALB controller managed SG|
+|alb.ingress.kubernetes.io/inbound-cidrs: "192.0.0.0/16,193.0.0.0/32" |CIDR ranges which will be added to the ALB controller managed SG attached to the LB|
+|alb.ingress.kubernetes.io/manage-backend-security-group-rules: true |set to 'true' so that ALB controller will manage adding rules to allow traffic from LB to Target Nodes |
+|alb.ingress.kubernetes.io/healthcheck-port: status-port	 | specifies the named port/port number used when performing health check on targets. |
+|alb.ingress.kubernetes.io/healthcheck-path: /healthz/ready	 | specifies the HTTP path when performing health check on targets |
+|alb.ingress.kubernetes.io/tags: App=Test |  specifies additional tags that will be applied to AWS resources created |
+{:.table-striped}
+
+### TLS Termination
+
+### Security Groups
+
+### Health Checks
+
+### LB Groups
+
+### gRPC ALB
+
 ## Network Load Balancer
 
 <figure>
