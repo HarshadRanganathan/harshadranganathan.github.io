@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Load Balancing in EKS"
-date: 2023-06-14
+date: 2024-03-29
 excerpt: "Steps to expose services through a load balancer in EKS"
 tag:
 - aws
@@ -132,11 +132,13 @@ Let's look at some of the annotations that you can configure and their behaviors
 
 ### Security Groups
 
-Network Load Balancers do not have associated security groups. 
+You can restrict access to your NLB's in two ways:
 
-However, you can add any CIDR rules to the security group of your worker nodes.
+[1] `spec.loadBalancerSourceRanges` property / `service.beta.kubernetes.io/load-balancer-source-ranges` annotations - List of CIDRs that are allowed to access the NLB.
 
-This is achieved by making use of `spec.loadBalancerSourceRanges` property.
+[2] `service.beta.kubernetes.io/aws-load-balancer-security-groups` - frontend securityGroups you want to attach to an NLB. 
+
+If you use this setting then you need to explicitly enable `service.beta.kubernetes.io/aws-load-balancer-manage-backend-security-group-rules` to `true` so that the ALB controller will manage the backend rules in the worker nodes/ENI security group.
 
 ```yaml
 apiVersion: v1
@@ -158,8 +160,6 @@ spec:
   loadBalancerSourceRanges:
     - 10.1.0.0/16
 ```
-
-Here, CIDR `10.1.0.0/16` is added to the worker nodes security group.
 
 It's critical to understand the importance of `loadBalancerSourceRanges`.
 
