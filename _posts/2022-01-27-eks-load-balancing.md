@@ -240,6 +240,47 @@ Below is an example of how the LB shared backend SG is created as a inbound rule
 
 ### Health Checks
 
+Your Application Load Balancer periodically sends requests to its registered targets to test their status. These tests are called health checks.
+
+Each load balancer node routes requests only to the healthy targets in the enabled Availability Zones for the load balancer.
+
+**Note - If a target group contains only unhealthy registered targets, the load balancer routes requests to all those targets, regardless of their health status. This means that if all targets fail health checks at the same time in all enabled Availability Zones, the load balancer fails open. The effect of the fail-open is to allow traffic to all targets in all enabled Availability Zones, regardless of their health status, based on the load balancing algorithm.**
+
+Below is a sample ingress file with health checks configured -
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:...
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/inbound-cidrs: "192.0.0.0/16,193.0.0.0/32"
+    alb.ingress.kubernetes.io/healthcheck-port: status-port
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz/ready
+spec:
+  ingressClassName: alb
+  rules:
+    - host: test.example.com
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: "app"
+                port:
+                  number: 80
+```
+
+{% include donate.html %}
+{% include advertisement.html %}
+
 ### LB Groups
 
 ### gRPC ALB
