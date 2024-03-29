@@ -46,6 +46,76 @@ Pre-requisites -
 {% include donate.html %}
 {% include advertisement.html %}
 
+### How To Provision
+
+To provision an Application Load Balancer, you need to create an Ingress resource with ALB listener rules & annotations.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+spec:
+  ingressClassName: alb
+  rules:
+    - host: test.example.com
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: "app"
+                port:
+                  number: 80
+```
+
+You also create a service of type `NodePort` to which the ALB will route the traffic using the Ingress rules defined above.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Service
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: http
+  selector:
+    app.kubernetes.io/name: App
+```
+
+### Subnet Discovery
+
+AWS Load Balancer Controller auto discovers network subnets by default.
+
+To be able to successfully do that you need to tag your subnets as follows:
+
+|Tag Key |Tag Value |Purpose|
+|--|--|--|
+|kubernetes.io/role/elb |1 |Indicates that the subnet is public. Will be used if ALB is internet-facing |
+|kubernetes.io/role/internal-elb |1 |Indicates that the subnet is private. Will be used if ALB is internal |
+{:.table-striped}
+
+### Instance Mode
+
+Instance target mode supports pods running on AWS EC2 instances. In this mode, AWS NLB sends traffic to the instances and the kube-proxy on the individual worker nodes forward it to the pods through one or more worker nodes in the Kubernetes cluster.
+
+### IP Mode
+
+IP target mode supports pods running on AWS EC2 instances and AWS Fargate. In this mode, the AWS NLB targets traffic directly to the Kubernetes pods behind the service, eliminating the need for an extra network hop through the worker nodes in the Kubernetes cluster.
+
+{% include donate.html %}
+{% include advertisement.html %}
+
 ### Annotations
 
 Let's look at some of the annotations that you can configure and their behaviors.
