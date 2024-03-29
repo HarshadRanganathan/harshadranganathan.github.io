@@ -73,7 +73,14 @@ spec:
                   number: 80
 ```
 
-You also create a service of type `NodePort` to which the ALB will route the traffic using the Ingress rules defined above.
+Above creates an ALB with target groups pointing to the EC2 instance Node Ports and listener rules as follows:
+
+|Conditions |Actions |
+|--|--|
+|**HTTP Host Header** is `test.example.com` AND **Path Pattern** is `/*` | Forward to target group belonging to EKS Worker nodes|
+{:.table-striped}
+
+You also need to create a service of type `NodePort` to which the ALB will route the traffic using the Ingress rules defined above.
 
 ```yaml
 apiVersion: v1
@@ -598,9 +605,9 @@ Another factor is `externalTrafficPolicy` which is by default set to `Cluster` m
 {% include donate.html %}
 {% include advertisement.html %}
 
-### Integration Patterns
+## Integration Patterns
 
-#### API Gateway
+### API Gateway
 
 <figure>
     <a href="{{ site.url }}/assets/img/2022/01/eks-api-gateway-private-integration.png">
