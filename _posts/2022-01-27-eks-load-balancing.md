@@ -68,7 +68,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: "app"
+                name: app
                 port:
                   number: 80
 ```
@@ -76,7 +76,7 @@ spec:
 You also create a service of type `NodePort` to which the ALB will route the traffic using the Ingress rules defined above.
 
 ```yaml
-apiVersion: networking.k8s.io/v1
+apiVersion: v1
 kind: Service
 metadata:
   name: "App"
@@ -175,7 +175,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: "app"
+                name: app
                 port:
                   number: 80
 ```
@@ -218,7 +218,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: "app"
+                name: app
                 port:
                   number: 80
 ```
@@ -273,7 +273,7 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: "app"
+                name: app
                 port:
                   number: 80
 ```
@@ -284,6 +284,91 @@ spec:
 ### LB Groups
 
 ### gRPC ALB
+
+To expose gRPC service via ALB we use following annotations:
+
+|Annotation Example |Purpose |
+|--|--|
+|alb.ingress.kubernetes.io/backend-protocol-version: GRPC |specifies the application protocol used to route traffic to pods |
+{:.table-striped}
+
+Above will create a Target Group which uses `gRPC` protocol forwarding to the target instances and linked to the LB listener rules.
+
+Sample ingress config is as below:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:...
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/inbound-cidrs: "192.0.0.0/16,193.0.0.0/32"
+    alb.ingress.kubernetes.io/healthcheck-port: status-port
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz/ready
+    alb.ingress.kubernetes.io/backend-protocol-version: GRPC 
+spec:
+  ingressClassName: alb
+  rules:
+    - host: test.example.com
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: app
+                port:
+                  number: 10901
+```
+
+In your service definitions, you map the ALB traffic to your gRPC traffic port as follows:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Service
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+spec:
+  ports:
+    - name: grpc
+      protocol: TCP
+      port: 10901
+      targetPort: 10901
+  selector:
+    app.kubernetes.io/name: App
+```
+
+Your pod definition will be as follows:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+spec:
+  containers:
+    - name: grpc-app
+      image: xxxxx
+      ports:
+        - name: grpc
+          containerPort: 10901
+          protocol: TCP
+```
+
+{% include donate.html %}
+{% include advertisement.html %}
 
 ## Network Load Balancer
 
