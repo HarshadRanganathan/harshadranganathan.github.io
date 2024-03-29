@@ -185,6 +185,59 @@ spec:
 
 ### Security Groups
 
+#### Frontend Security Groups
+
+These are security groups attached to the LB which can be used for restricting access to the clients e.g. allow traffic only from certain CIDR ranges.
+
+ALB controller by default creates a new SG which it links to the LB. You can add CIDR ranges to this SG using `alb.ingress.kubernetes.io/inbound-cidrs` annotation.
+
+However, if you wish to use an existing SG at account level to be linked to the LB instead of the managed SG created by ALB controller, you can override the behavior by specifying the custom SGs using `alb.ingress.kubernetes.io/security-groups` annotation.
+
+Sample ingress config is as below:
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "App"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: App
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:...
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/inbound-cidrs: "192.0.0.0/16,193.0.0.0/32"
+spec:
+  ingressClassName: alb
+  rules:
+    - host: test.example.com
+      http:
+        paths:
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: "app"
+                port:
+                  number: 80
+```
+
+#### Backend Security Groups
+
+By default, ALB controller creates a shared backend security group which has range of ports which it binds to the target EC2 instances to allow traffic from the LB.
+
+If you're specifying custom frontend security groups then you need to explicitly enable this behavior using `alb.ingress.kubernetes.io/manage-backend-security-group-rules` annotation.
+
+Note - ALB controller uses this single shared backend security group for all LBs attached to the cluster. This ensures you don't hit the inbound rule limits per EC2 by creating an inbound rule for each ALB exposed from the cluster. Previously, for each port an inbound rule was created which meant you will easily hit the limits with just an handful of ALBs pointing to the EKS cluster. 
+
+Below is an example of how the LB shared backend SG is created as a inbound rule in the EC2 target SG.
+
+|Source |Port Range |Protocol |
+|--|--|--|
+| sg-xxxxx|30262-32440 |TCP |
+{:.table-striped}
+
 ### Health Checks
 
 ### LB Groups
