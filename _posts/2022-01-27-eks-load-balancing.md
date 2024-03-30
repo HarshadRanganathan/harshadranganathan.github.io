@@ -43,6 +43,16 @@ Pre-requisites -
 
 ## Application Load Balancer
 
+<figure>
+    <a href="{{ site.url }}/assets/img/2024/03/eks-alb.png">
+        <picture>
+            <source type="image/webp" srcset="{{ site.url }}/assets/img/2024/03/eks-alb.webp">
+            <source type="image/png" srcset="{{ site.url }}/assets/img/2024/03/eks-alb.png">
+            <img src="{{ site.url }}/assets/img/2024/03/eks-alb.png" alt="">
+        </picture>
+    </a>
+</figure>
+
 {% include donate.html %}
 {% include advertisement.html %}
 
@@ -407,6 +417,8 @@ Also, there are different strategies on how these configurations are managed -
 
 - Avoid giving your group a generic name like MyIngressGroup, because someone else in the cluster may create an Ingress with the same name, which adds their Ingress to your group. If they create higher priority rules, they may highjack your application’s traffic.
 
+{% include donate.html %}
+{% include advertisement.html %}
 
 ### gRPC ALB
 
