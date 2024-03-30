@@ -288,7 +288,125 @@ spec:
 {% include donate.html %}
 {% include advertisement.html %}
 
-### LB Groups
+### Shared Ingress/ALB
+
+Typically, teams expose an ALB for each app deployed in the cluster as each of them will have ingress & service definitions as part of their deployment.
+
+This means you will have loads of ALBs running for your cluster depending on the app count.
+
+One optimization that can be done is sharing ALB/Ingresses for multiple apps.
+
+This can be done by adding multiple apps in same/different namespaces to an Ingress Group which will merge all the ingress rules to a single shared ALB for traffic routing.
+
+To group ingress resources, `alb.ingress.kubernetes.io/group.name` annotation is used.
+
+Below shows 2 services which define this annotation to share an ALB:
+
+**BookApp**
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "BookApp"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: BookApp
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:...
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/inbound-cidrs: "192.0.0.0/16,193.0.0.0/32"
+    alb.ingress.kubernetes.io/healthcheck-port: status-port
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz/ready
+    alb.ingress.kubernetes.io/group.name: prod-cluster-1-group
+spec:
+  ingressClassName: alb
+  rules:
+    - host: book.example.com
+      http:
+        paths:
+          - path: /api/book/search
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: BookApp
+                port:
+                  number: 80
+```
+
+**ProductApp**
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "ProductApp"
+  namespace: "application"
+  labels:
+    app.kubernetes.io/name: ProductApp
+  annotations:
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:...
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-Ext-2018-06
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/inbound-cidrs: "192.0.0.0/16,193.0.0.0/32"
+    alb.ingress.kubernetes.io/healthcheck-port: status-port
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz/ready
+    alb.ingress.kubernetes.io/group.name: prod-cluster-1-group
+spec:
+  ingressClassName: alb
+  rules:
+    - host: product.example.com
+      http:
+        paths:
+          - path: /api/product/search
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: ProductApp
+                port:
+                  number: 80
+```
+
+In above example, you can see both the apps have different routes `/api/book/search` & `/api/product/search` defined with same `group.name: prod-cluster-1-group`.
+
+ALB controller, will create a single shared ALB containing both the listener path rules binding to the respective target groups.
+
+#### Behaviors
+
+- If the ALB for the new IngressGroup doesn't exist, a new ALB will be created.
+
+- If an IngressGroup no longer contains any Ingresses, the ALB for that IngressGroup will be deleted and any deletion protection of that ALB will be ignored.
+
+- When the groupName of an IngressGroup for an Ingress is changed, the Ingress will be moved to a new IngressGroup and be supported by the ALB for the new IngressGroup. 
+
+
+#### Strategies
+
+There are different strategies on how you can share ALBs -
+
+[1] Share ALB by each namespace
+
+[2] Share ALB across namespaces grouping by low traffic apps
+
+etc.
+
+Also, there are different strategies on how these configurations are managed -
+
+[1] Group name & ingress definitions are defined in each app deployment
+
+[2] Central repo which will have ingress definitions with group names managed/reviewed by Ops team to ensure no routing conflicts
+
+**Limitations - Each ALB listener can have up to 100 rules by default. This means you might have to spin off additional shared ALB's depending on how many apps are deployed in a single namespace**
+
+#### Conflicts
+
+- Any team can add more rules or overwrite existing rules with higher priority to the ALB for your Ingress by using the `group.name` annotation.
+
+- Ordering of ingress rules can lead to application-wide incorrect routing if any of the Ingresses have misconfigured rules e.g. a team can misconfigure to send all traffic to their app with wildcard pattern `/*` which means they can highjack all the traffic causing impact to other apps
+
+- Avoid giving your group a generic name like MyIngressGroup, because someone else in the cluster may create an Ingress with the same name, which adds their Ingress to your group. If they create higher priority rules, they may highjack your application’s traffic.
+
 
 ### gRPC ALB
 
