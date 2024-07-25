@@ -536,80 +536,68 @@ As a team lead, it’s crucial to acknowledge and credit your team members for t
 
 ## Listen To Feedback
 
-It's important to listen to feedback as a Team Lead.
+Listening to feedback is crucial for any Team Lead. However, some common reasons why Team Leads might not gather feedback effectively include:
 
-More often, Team Leads fail to gather feedback from their Team Members due to following reasons -
+1. **Overconfidence:** Believing they’re already doing a good job.
+2. **Time Constraints:** Lack of time to solicit and review feedback.
+3. **Misconception:** Confusing feedback needs with retrospective sessions.
 
-[1] They think they are doing a good job
+To gauge team sentiment, consider gathering feedback every quarter. Here’s how to do it effectively:
 
-[2] Lack of time
-
-[3] Confusing the need for feedback with retrospective sessions
-
-Below is a sample feedback you could get from your team every quarter, to know the team pulse - 
-
-[1] Make sure every team member completes the feedback form
-
-[2] Remove ambiguity in the questions
-
-[3] Ensure your questions cover aspects you think are important for the growth, culture of the team
-
-[4] Ensure you ask questions that aren't covered in retrospectives but are in your team member's mind which they don't ask due to some hesitation
+1. **Complete Participation:** Ensure every team member fills out the feedback form.
+2. **Clear Questions:** Avoid ambiguity in your questions.
+3. **Cover Key Areas:** Include questions on aspects crucial for team growth and culture.
+4. **Beyond Retrospectives:** Ask about issues not covered in retrospectives but relevant to team members.
 
 <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__qYx7d9UQzRYTDI5NUQ0WEM5REZHRE5RSjQ4WEUyMC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
-First step is to ask for feedback but even more important step is to act upon the feedback!
+**Acting on Feedback:**
 
-Most often, feedbacks asked by companies are not acted upon - empty promises are given such as 'we'll look into them', 'your feedback is really important to us' etc. after which the conversation dies and you end up filling similar feedback for next year.
+1. **Implement Quickly:** Identify actionable suggestions within your control and make improvements swiftly.
+2. **Seek Guidance:** Discuss items needing managerial approval or higher-level discussion with your manager.
+3. **Update the Team:** Regularly inform the team about actions taken in response to their feedback.
 
-Once you get the feedback do the following -
+**Common Pitfalls:**
 
-[1] See what suggestions are within your control and makes sense that you can quickly implement in the team
-
-[2] Discuss with your manager on any items that need his guidance/approval/discussion with higher management
-
-[3] Keep the team posted on a recurring basis on what you are doing to address the feedback items in your capacity
+- Feedback is often collected but not acted upon, leading to empty promises and recurring issues.
+- Ensure follow-through on feedback to avoid repeating concerns in future evaluations.
 
 {% include donate.html %}
 {% include advertisement.html %}
 
 ## Monthly Learning Sessions
 
-Knowledge sharing is an important aspect to help the team grow, avoid silos, dependencies with an individual team member, career growth etc.
+Knowledge sharing is vital for team growth, reducing dependencies, and career development. While PRs can facilitate knowledge transfer, they often fall short due to time constraints or quick approvals. To address this, schedule recurring Monthly Learning Sessions with the following practices:
 
-Each and every team member needs to be aware of how certain component works, not just from a code aspect but also from an hands-on approach as well as be given the opportunity to raise questions.
+1. **Duration:** Limit sessions to 1 hour to maintain focus and engagement.
 
-Although we could say that PR's are the platform for achieving some of the above, it is not always possible as sometimes certain members don't review PR's or give quick approvals due to lack of time/delivery constraints.
+2. **Team Contribution:** Ensure every team member contributes. Before the session, have each member complete a form detailing what they will share—whether it’s something from the current sprint, new tech trends, or other relevant topics. Avoid having one person do all the talking; make it interactive.
 
-<br/>
-Schedule a recurring Monthly Learning Session following below practices -
+3. **Time Management:** Allocate 15 minutes per team member for their presentation.
 
-[1] Keep the learning session to a max of 1 hour - anything more than that will just make people to lose focus
+4. **Recording:** Record sessions and embed them in your internal documentation site. This provides a resource for external teams and new members, avoiding repetitive information.
 
-[2] Make sure every team member contributes to the session - Have a form created before the session and ask each team member to fill it out in terms of what they would be sharing within the team - it could be something that they worked in the current sprint, any technology news/trends etc.
+5. **Session Splitting:** If the team size exceeds what can be covered in 1 hour, split the session into two separate days.
 
-It shouldn't be the case where one team member keeps sharing the knowledge while others just keep listening. It's not a training class.
+**Benefits:**
 
-Each team member should bring something to the table.
+1. **Distributed Knowledge:** Reduces dependency on individual team members for knowledge sharing.
+   
+2. **Support Readiness:** Enables any team member to handle support and issues effectively.
 
-[3] Time-box the session to 15 mins for each team member to present.
-
-[4] Record the sessions and have them embedded in your internal documentation site so that external teams/new team members can simply listen to them instead of having to repeat same information every now and then.
-
-[5] If your team has more team members than you could accommodate within a 1 hour session then split the session into 2 learning sessions on different day.
-
-<br/>
-*What does above achieve?*
-
-[1] Work could be distributed instead of depending on same team member every time
-
-[2] Anyone in the team could handle support/issues 
+This format ensures clarity and ease of implementation for your Monthly Learning Sessions.
 
 ## Newsletters/Announcements
 
-- Share what the team has delivered every sprint to stakeholders
-- Share any new docs published for everyone's awareness
-- Share proposed work items so that external/dependent teams can raise any risks/impacts
+Keep stakeholders informed and engaged by sharing the following updates:
+
+1. **Sprint Deliverables:** Highlight what the team has accomplished every sprint to keep stakeholders up-to-date.
+
+2. **New Documentation:** Announce any newly published documentation to ensure everyone is aware and can access the latest information.
+
+3. **Proposed Work Items:** Share upcoming work items with external or dependent teams to allow them to identify and raise any potential risks or impacts.
+
+This format makes it clear and actionable for keeping everyone informed through newsletters and announcements.
 
 <figure>
     <a href="{{ site.url }}/assets/img/2022/05/newsletters.png">
@@ -623,19 +611,17 @@ Each team member should bring something to the table.
 
 ## External Support
 
-- Document any new questions that arise so that they could search and find the information themselves the next time or you could share link to the doc
-- Assess priorities of support vs delivery
+1. **Document New Questions:** Capture any new questions that arise and document them. This helps the team find answers independently in the future or allows you to share a link to the relevant document.
 
+2. **Assess Priorities:** Balance the need for support with delivery priorities to ensure both are managed effectively.
 
 ## Meetings
 
-One of the problem that comes up in a Retro is `too many meetings` and how it impacts delivery.
+A common retro feedback point is the impact of excessive meetings on delivery. To address this:
 
-Strategy that I have used is to represent the team in most meetings and invite the team members only when necessary.
+1. **Representation:** Attend most meetings yourself and invite team members only when their presence is essential. This reduces the number of meetings team members need to attend.
 
-This keeps the number of meetings that team members need to attend to a minimal.
-
-As a team lead, you then collate all updates and share it in the standup/team's channel announcement so that everyone is kept in loop as well.
+2. **Collate and Share:** As a team lead, gather all updates from meetings and share them in standups or team channels to keep everyone informed.
 
 
 {% include donate.html %}
@@ -644,27 +630,39 @@ As a team lead, you then collate all updates and share it in the standup/team's 
 
 ## Manager Discussions
 
-- Discuss your goals/expectations
-- Get feedback on your work
-- Highlight any retro items
-- Get inputs on any process you would like to try
-- Use the expertise of the manager to see how you can solve any team problems
-- Provide both strengths and weaknesses of team members on a recurring basis
+1. **Discuss Goals and Expectations:** Clarify your goals and what’s expected from you.
+
+2. **Seek Feedback:** Regularly get feedback on your work to understand areas of improvement.
+
+3. **Highlight Retro Items:** Bring up any issues or action items from retrospectives that need managerial attention.
+
+4. **Process Inputs:** Get your manager's input on any new processes or changes you want to implement.
+
+5. **Leverage Expertise:** Use the manager’s expertise to address and solve team problems effectively.
+
+6. **Provide Team Member Assessments:** Regularly share both strengths and weaknesses of team members with your manager.
+
 
 ## Globally Distributed Team
 
-When you have a globally distributed team, some of the challenges which arise are:
-- Less time overlap where all team members are available
-- Team members blocked and waiting for info from members in another region
-- Missing any meetings that happen after-hours in a different time zone
-- Giving same updates in different standups e.g. Product Owner in US while other teams are in different locations
+When managing a globally distributed team, you may face challenges like:
 
-What I did:
-- Use the overlap time effectively e.g. learning sessions, retrospective
-- Split the standups to suit different timezones but don't ask to repeat same updates from team members who end up having to attend multiple standups. Instead, summarize the updates wherever applicable.
-- If team members are blocked, have some doc tasks that they could work on in the meantime while members in other location come online for support/clarification
-- Share any meeting updates via email/capture a card and give updates in the next standup to keep everyone in loop
-- Foresee any information/potential blockers in advance and have them resolved/share information via email/channel notification so that the other time zone members have clarity/unblocked once they come online early the next day
+- **Limited Overlap:** Limited time when all team members are available.
+- **Blocked Team Members:** Team members waiting for information from others in different regions.
+- **After-Hours Meetings:** Missing meetings scheduled in different time zones.
+- **Repeated Updates:** Providing the same updates in multiple standups.
+
+**What I Did:**
+
+1. **Utilize Overlap Time:** Use overlapping hours effectively for activities like learning sessions and retrospectives.
+
+2. **Split Standups:** Adapt standup meetings for different time zones, summarizing updates to avoid repetition.
+
+3. **Manage Blockages:** Provide documentation tasks for team members who are blocked until others come online for support.
+
+4. **Share Meeting Updates:** Send meeting updates via email or capture a card and share in the next standup to keep everyone informed.
+
+5. **Anticipate Issues:** Proactively address potential blockers and share information in advance to ensure smooth progress across time zones.
 
 To zoom and view the content, check the image here - https://raw.githubusercontent.com/HarshadRanganathan/team-leader-templates/main/meeting-schedule/meeting-schedule.png
 
@@ -680,13 +678,19 @@ To zoom and view the content, check the image here - https://raw.githubuserconte
 
 ## General Tips
 
-- Try what works for your team
-- Do a round table with all team members to garner their thoughts and reach a collective conclusion - avoid being authoritative
-- Sometimes what the majority suggests isn't always the best solution - at those times enforce authority and guide the team in the right direction
-- Improve things step by step - you can't change the culture overnight
-- Place trust in the team members - avoid micro management (use only when necessary)
-- Market your team's work
-- Give credit where credit's due
+- **Adapt to Your Team:** Implement strategies that work best for your team’s unique needs and dynamics.
+
+- **Collaborative Decision-Making:** Conduct roundtable discussions with all team members to gather their input and reach a collective conclusion. Avoid being overly authoritative.
+
+- **Authority When Needed:** If the majority’s suggestion isn’t ideal, don’t hesitate to guide the team and enforce the best direction.
+
+- **Incremental Improvement:** Focus on gradual improvements. Changing team culture and processes takes time.
+
+- **Trust Your Team:** Foster trust and avoid micromanaging. Intervene only when absolutely necessary.
+
+- **Promote Your Team’s Work:** Highlight and market your team’s achievements and contributions.
+
+- **Acknowledge Contributions:** Always give credit where it’s due to recognize team members' efforts and foster a positive environment.
 
 
 {% include donate.html %}
