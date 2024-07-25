@@ -462,72 +462,74 @@ e.g.
 
 ## PRs
 
-Typical problems:
+**Typical Problems:**
 
-- PR's not reviewed in a timely manner
-- PR changes are too large
-- PR review comments ignored
-- Too much changes proposed
-- Rework of PR needed
-- Tone of the person's comment
-- Team Member doesn't approve other's PR but expects his PR to be approved
-- PR sits for more than a week
-- Change suggested in one place is not reflected wherever applicable
-- Instead of responding to PR comments, you receive pings with explanation
+- PRs are not reviewed in a timely manner.
+- PR changes are too large.
+- PR review comments are ignored.
+- Too many changes proposed.
+- Rework of PR needed.
+- Tone of review comments.
+- Team members expect their PRs to be approved without approving others.
+- PRs sit for more than a week.
+- Changes suggested in one place are not reflected elsewhere.
+- Instead of responding to PR comments, you receive pings with explanations.
 
-Things I suggest to team members every now and then:
-- Dedicate time every day to review pending PR's
-- If you're waiting for a PR to be approved, post reminders in team's channel or raise it in the standup if it's a blocker
-- Break PR's to smaller reviewable chunks - don't mix things up - do iterative improvements
-- Provide description to the PR stating the change, purpose, any other info required for approval
-- Provide your response to all PR comments
-- Do not count how many comments are given - focus on improving the code, making it more maintainable and resolving any issues highlighted
-- Raise draft PR or have a small team discussion on the approach you are planning to take to avoid any re-work later
-- Use keywords such as 'Can you please' or suggestions in your PR comments. If you are reading the comments ignore the tone of the person and take it with a positive thought, share feedback with the person/manager to add it as a area of improvement for that person.
-- Approve any pending PR's before demanding your PR to be approved
-- Respond to PR comments in the PR itself - incase of any delays then reach out to the person to notify that you have responded to their comments
+**Recommendations:**
+
+- **Daily Review Time:** Dedicate time each day to review pending PRs.
+  
+- **Reminders:** If awaiting PR approval, post reminders in the team channel or raise it during standup if it’s a blocker.
+
+- **Smaller Chunks:** Break PRs into smaller, manageable chunks for easier review. Avoid mixing unrelated changes.
+
+- **Provide Descriptions:** Include a clear description in the PR outlining the changes, their purpose, and any additional information needed for approval.
+
+- **Respond to Comments:** Address all PR comments within the PR. Focus on improving code quality and resolving issues highlighted, not on the number of comments.
+
+- **Draft PRs and Discussions:** Consider raising a draft PR or having a small team discussion about the approach to avoid rework later.
+
+- **Positive Tone:** Use polite language such as "Can you please" in comments. If you encounter a negative tone, interpret it positively and provide constructive feedback to the person or manager.
+
+- **Approve Others’ PRs:** Ensure you approve pending PRs before requesting approval for your own.
+
+- **Direct Responses:** Respond to PR comments directly within the PR. If there are delays, notify the reviewer that you have responded to their comments.
 
 ## Mentorship
 
-One of the responsibilities of a team lead is to guide junior/all team members.
 
-Strategy I had used is to have bi-weekly connect sessions with all team members.
+As a team lead, one of your key responsibilities is to guide and support all team members, especially juniors. Here’s how I approach it:
 
-- Discuss any concerns team members have
-- Discuss their goals
-- Discuss things they are interested to work on
-- Any technical discussions
-- Suggestions for improvement
+- **Bi-Weekly Connects:** Schedule bi-weekly sessions with each team member.
+  - Discuss any concerns they have.
+  - Explore their career goals and interests.
+  - Talk about any technical issues or topics.
+  - Offer suggestions for their improvement.
 
-I try to keep these sessions informal and it has helped a lot to understand conflicts happening within the team, areas for improvement, determine potential work assignments, career paths etc.
+I keep these sessions informal to better understand team dynamics, identify areas for improvement, and discuss potential work assignments and career paths.
 
 ## Sharing Credit/Recognition
 
-As a Team Lead, always share credit to the work done by your Team Member. e.g. mention that person X worked on it in a call instead of projecting that it was your efforts and getting undue credit
+As a team lead, it’s crucial to acknowledge and credit your team members for their contributions. Here’s how to effectively share credit and recognize efforts:
 
-Recognize the efforts of your Team Members.
+- **Give Credit:** Publicly mention the team member who did the work. Avoid taking undue credit for their efforts.
 
-Take notes of your Team Members contributions that you feel needs to be acknowledged.
+- **Recognize Efforts:** Keep track of contributions that deserve acknowledgment.
 
-On a recurring basis, recognize the efforts by -
+- **Recognition Methods:**
+  - **Feedback:** Share positive feedback with the team member’s supervisor.
+  - **Awards/Points:** Recognize their efforts through internal awards or thank-you portals.
+  - **Thank You Email:** Send a detailed thank you email, cc’ing their supervisor or manager.
+  - **Public Recognition:** Mention their contributions in meetings, presentations, or slides.
 
-[1] Sharing feedback with the Team Member's supervisor
+- **Be Specific:** Avoid vague recognition. Provide detailed feedback to show genuine appreciation and attention to their efforts.
 
-[2] Recognizing the efforts through any internal awards/points/thank-you portal
+**Bad Recognition Examples:**
+- "Thanks for all your efforts last month."
+- "Thanks for all your efforts in delivering project X."
 
-[3] Sending `Thank You` email cc-ing the Supervisor/Manager
-
-[4] Calling out contributions in any meetings/slides etc.
-
-Be more concrete with your recognition. I have seen many people who send thank you with vague content.
-
-Capture every detail as possible in your email/reward so that the Team Member gets astonished by the level of observation by the Tech Lead.
-
-**Bad Recognition Examples**
-
-*Thanks for all your efforts last month*
-
-*Thanks for all your efforts in delivering the project X*
+**Good Recognition Examples:**
+- "Thank you for your exceptional work on the X project. Your innovative solution to Y issue significantly improved our workflow. Your attention to detail and proactive approach were instrumental in meeting our deadline. Great job!"
 
 {% include donate.html %}
 {% include advertisement.html %}
