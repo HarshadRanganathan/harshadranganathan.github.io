@@ -124,29 +124,24 @@ A well-maintained backlog helps keep documentation comprehensive and up-to-date.
 
 ### Weekly Docs Contribution
 
-We would like team members to contribute docs on a recurring basis - when they find time, working on related tasks etc.
+To ensure regular documentation updates, we encourage team members to contribute to documentation as they work on related tasks. However, this often doesn’t happen due to busy schedules and delivery pressures.
 
-But in reality this doesn't happen as team members are busy with delivery.
+To address this, we implemented a weekly documentation contribution schedule:
 
-So, we have to start enforcing things.
+- **Day Chosen:** `Friday` is designated for documentation work. It’s a day when team members are winding down and can dedicate an hour or so to this task.
 
-One idea I had implemented is to ask team members to contribute docs on a weekly basis.
+**How We Enforce It:**
 
-We chose `Friday` as the day team members will spend an hour or so for writing docs. Friday is usually when team members wind up on items, bit relaxing day so it made sense to utilize that day and ask members to contribute for docs.
+1. **Add Reminder:** Create a reminder card in the Teams planner tab for "Friday Docs," including due dates.
+2. **Thursday Standup:** Review the docs backlog list, identify priority items, and select quick wins to document.
+3. **Team Discussion:**
+   - Assign documentation tasks to each member
+   - Ensure sufficient details are available
+   - Clarify any doubts
+4. **Friday Contribution:** Team members spend time on documentation and raise pull requests (PRs).
 
-Next is how to enforce it -
+This practice has been effective for regular documentation updates.
 
-1. We added a reminder card to Teams planner tab - e.g. Friday Docs with reminder/due date
-2. On Thursday standup, we will bring up the docs backlog list and pick items we think are of quick wins/priority to be documented
-3. As a team, we would discuss 
-
-    what each member will be contributing on and assign items<br/>
-    check if sufficient details are available for the task<br/>
-    clarify any doubts
-
-4. On Friday, team members would spend some time to contribute docs and raise PR
-
-On a recurring basis, this practice worked well.
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/teams-planner-card-friday-docs.png">
@@ -158,52 +153,59 @@ On a recurring basis, this practice worked well.
     </a>
 </figure>
 
-Problems faced:
-1. Requires the standup facilitator to bring up the card on Thursday's
-2. Sometimes, team members still end up not delivering on docs so need to remind for next week
+**Problems Faced:**
+
+1. **Reminder Management:** The standup facilitator needs to bring up the reminder card each Thursday.
+2. **Incomplete Contributions:** Sometimes, team members still miss their documentation tasks, requiring follow-up reminders for the next week.
 
 {% include donate.html %}
 {% include advertisement.html %}
 
 ### External Contributors
 
-If you have limited team members/more items to document, it might make sense to bring in external contributors to scale up the activity.
+When your team is small or there's a high volume of documentation, involving external contributors can help scale up the effort.
 
-Couple of approaches to bring in external contributors:
-- Market that they get a chance to work and learn with your team on the topic they document
-- Incentivize external contributions by giving thank you points, thank you emails or callouts in meetings.
-- Don't fix hard deadlines for doc delivery
+**Approaches to Involve External Contributors:**
 
-Although this involves spending little bit more time with external contributors on explaining the process, walkthroughs, supporting them by providing required details etc.
+- **Promote Learning Opportunities:** Highlight the chance for them to work with your team and learn about the documented topic.
+- **Offer Incentives:** Recognize their contributions with thank you points, acknowledgment in emails, or shout-outs in meetings.
+- **Avoid Hard Deadlines:** Allow flexibility in delivery to accommodate their schedules.
+
+**Considerations:**
+
+While working with external contributors may require additional time for explaining processes, providing walkthroughs, and supporting them with necessary details, it can effectively boost your documentation efforts.
 
 ### PRs
 
-- If PR's don't have README updated (depends on the change) suggest to have it done before giving approval
-
-- If PR's need to be approved due to urgency of the change, then ask the team member to raise an issue in the repo so that it's tracked as a pending item to be worked upon later
+- **Update README:** If a pull request (PR) does not include updates to the README (when applicable), request that the README be updated before approval.
+  
+- **Track Pending Changes:** For urgent PRs that require immediate approval, ask the team member to raise an issue in the repository to track the pending documentation updates for later.
 
 {% include donate.html %}
 {% include advertisement.html %}
+
 ## Daily Standup
 
-- Assign standup facilitator or rotate it among team members every week/sprint
-- Ensure quick round table of updates 
-- If any team member derails the standup updates remind them to instead bring it up in the parking lot as every team member needs to first finish providing their updates
-- Ensure standup doesn't exceed the alloted time limit
-- If any items require more discussion check with the team to see if they wish to continue in the same meeting/provide small break/ask the team member to create a dedicated meeting for further discussion etc.
+- **Facilitator Assignment:** Assign a standup facilitator or rotate the role among team members weekly or per sprint.
+  
+- **Round Table Updates:** Ensure each team member gives a quick update. If someone starts to diverge, remind them to use the parking lot for detailed discussions to keep the standup focused.
 
-Also, as a team lead the daily standup is a good place to provide:
-- any general updates 
-- check status on any specific work items
-- any specific items to be briefly discussed
+- **Time Management:** Keep the standup within the allotted time. If more discussion is needed, decide whether to continue, take a short break, or schedule a separate meeting.
+
+- **Team Lead Role:** Use the standup to provide:
+  - General updates
+  - Status checks on specific work items
+  - Brief discussions on specific topics
 
 ### Standup Cards
 
-Sometimes, people forget what they had planned to raise in the standup.
+To keep track of topics to raise, use the Teams Planner tab to create "Daily Standup Items" cards. Team members and leads can add cards with due dates whenever they think of something.
 
-So, I introduced a process to raise cards in the teams planner tab called `Daily Standup Items` where team members/team lead can quickly add a card with due date for discussion as and when it comes to their mind.
+**Process:**
+- **Card Creation:** Add items to the Daily Standup Items tab as they come up.
+- **Card Review:** During the standup, review these cards and allow the creator to provide updates or ask questions.
 
-Then, in the daily standup ceremony we go through these cards and the member who raised it provides updates/asks questions. In this way, we don't miss things to be raised in the standup.
+This method helps ensure that no important topics are missed during the standup.
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/teams-planner-card-friday-docs.png">
@@ -215,22 +217,30 @@ Then, in the daily standup ceremony we go through these cards and the member who
     </a>
 </figure>
 
-Problems faced:
-1. Needs to be part of regular ceremony of things done in standup
-2. Sometimes, there might be more cards so try to pick cards which are important from team's perspective to be discussed right now and cards which can be delayed
-3. Some team members prefer to have their own personal notes
+**Problems Faced:**
+- **Integration:** Ensure the card process is consistently followed during standups.
+- **Card Volume:** Prioritize important cards for discussion and consider delaying less critical ones.
+- **Personal Notes:** Some team members may prefer using their own notes, so be flexible in accommodating different methods.
 
 {% include donate.html %}
 {% include advertisement.html %}
 
 ## Retrospectives
 
-- In a tool of your choice, have different columns such as `Start`, `Stop`, `Continue` and `Action Items`
-- Rotate the retro facilitator every sprint
-- Start timer for `10-15 mins` and have the team members populate the cards for each section
-- Retro facilitator goes through the cards and works with team to see what cards can be merged (as duplicates) and what cards need more clarity
-- Start timer for `5 mins` to vote on cards - each team member is given certain number of votes which they use to indicate what is important to be addressed
-- Retro facilitator works with the team to generate action items and ownership for the cards
+Use a tool of your choice to manage retrospectives with columns such as **Start**, **Stop**, **Continue**, and **Action Items**.
+
+**Process:**
+
+1. **Facilitator Rotation:** Rotate the retro facilitator every sprint.
+   
+2. **Populate Cards:** Start a timer for 10-15 minutes for team members to add cards to each section.
+
+3. **Review Cards:** The facilitator reviews the cards, merges duplicates, and seeks clarity on items that need it.
+
+4. **Voting:** Start a timer for 5 minutes to vote on cards. Each team member has a set number of votes to prioritize important issues.
+
+5. **Generate Action Items:** The facilitator works with the team to create actionable items and assign ownership.
+
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/retro-board.png">
@@ -242,17 +252,19 @@ Problems faced:
     </a>
 </figure>
 
-Typically, every team struggles with retrospective action items:
-- card is not actionable since it requires more authority
-- team lead/member who has the action item assigned is busy so they come up with an excuse of `I was busy/no time/forgot` in the next retrospective
-- not all cards have action items assigned - so a team member could feel that their card is ignored
+**Common Challenges:**
 
-In the end, retrospective becomes more of a place where people can vent their frustrations on a recurring basis and less problems get resolved.
+- **Non-Actionable Items:** Some cards may require more authority to address.
+- **Excuses for Inaction:** Assigned team members might cite busy schedules or forgetfulness.
+- **Unaddressed Cards:** Cards without assigned action items may feel ignored.
+- **Ventilation vs. Resolution:** Retrospectives can become a space for complaints rather than solutions.
 
-What I did:
-- Even if a retro card didn't get the votes if it feels to be an important item to be addressed even for a single team member then spend some time to provide tips/address concerns/generate an action item for it
-- Pick only reasonable action items - things that could be solved by the team/by manager - anything that requires more authority raise it as a feedback to manager 
-- Add a card to `Daily Standup Items` with a due date set to mid of the sprint to have a `Retro checkpoint` to share any updates on the action items/to remind team members of pending action items etc.
+**Solutions:**
+
+- **Address All Cards:** Even if a card doesn’t get many votes, if it’s important for any team member, take time to address it or create an action item.
+- **Reasonable Action Items:** Focus on items that can be resolved by the team or manager. Raise issues requiring higher authority as feedback to management.
+- **Retro Checkpoints:** Add a card to Daily Standup Items with a due date set for mid-sprint. Use it to review progress on action items and remind team members of pending tasks.
+
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/teams-planner-card-retro-checkpoint.png">
@@ -269,33 +281,50 @@ What I did:
 
 ## Backlog Grooming
 
-- Do frequent groomings instead of one big grooming call e.g. have the grooming meeting every week or break it down to smaller sessions based on team feedback
-- Encourage team conversations rather than you just providing all the required details
-- Remove any fear within team members by having conversations with them that it is okay to say you don't understand the story or it needs more details
-- Do a round table if you notice that any team members are not participating by providing their inputs/raising questions/feedback
-- Ensure that the story has enough details for anyone in the team to work on it
-- Use any tools to get the story point size from all team members 
-- Always try to go with a bigger estimation when in doubt rather than a smaller one
-- If any team member gives very high estimation ask them the reason to see if it's justified - split stories to multiple smaller ones if needed
-- For any stories that are new to the team check if a spike is needed - if so try to have it in the sprint prior to the work so that feasibility/approach to be used/gotchas are known prior to the implementation. Based on the spike further discussions can happen
-- If you have new team members they may not be in a position to know if the story has required details - ask them to go through the story during the week and come up with any questions for the next grooming call
+**Best Practices:**
 
-Problems faced:
-- Getting team participation is always a difficult task - it requires commitment from every team member
-- Some team members end up asking more questions/indicate they have no idea on what needs to be done after picking up the story
-- Sometimes team members assume that they may not be working on a particular story so they don't need to worry about if adequate details are present in the story
-- More experience/domain knowledge may be needed to assess impacts/risks associated with a work item
+- **Frequent Groomings:** Hold weekly grooming meetings or break them into smaller sessions based on team feedback to avoid a single large call.
+  
+- **Encourage Team Input:** Foster discussions rather than solely providing details yourself. Create an environment where team members feel comfortable asking for clarification or admitting they don’t understand.
+
+- **Round Table Participation:** If some team members are not contributing, do a round table to ensure everyone has the opportunity to provide input, raise questions, or give feedback.
+
+- **Detail Adequacy:** Ensure each story has enough detail for any team member to understand and work on it.
+
+- **Story Points:** Use tools to gather story point estimates from all team members. When in doubt, lean towards a higher estimation rather than a lower one.
+
+- **High Estimations:** If a team member provides a very high estimate, ask for justification to determine if it’s reasonable. Consider splitting large stories into smaller ones if needed.
+
+- **Spikes:** For new stories, check if a spike (research or exploration task) is needed to understand feasibility, approach, and potential challenges. Conduct this spike in the sprint before the implementation to ensure readiness.
+
+- **New Team Members:** Ask new members to review stories during the week and come prepared with questions for the next grooming session.
+
+**Problems Faced:**
+
+- **Team Participation:** Engaging all team members can be challenging and requires their commitment.
+  
+- **Uncertainty and Questions:** Some members may ask many questions or claim they don’t understand what needs to be done after picking up a story.
+
+- **Assumptions:** Team members might assume they won’t work on certain stories and therefore not concern themselves with story details.
+
+- **Experience Gap:** Assessing impacts and risks may require more experience or domain knowledge, which can affect story evaluation.
 
 {% include donate.html %}
 {% include advertisement.html %}
 
 ## PI Planning
 
-- Use any whiteboarding tools to plan work items across sprints
-- Get inputs from team members to allocate any technical debt/backlog items that they would like to focus on in the upcoming PI and see if it can be accommodated
-- Add sections/different areas that the team could focus on - e.g. CI/CD, security etc. so that everything is covered
-- Prioritize the backlog to see potential items that could be worked upon to fill any gaps in PI
-- Publish the planning to other dependent teams to that they could take a look at raise any items missed out
+**Best Practices:**
+
+- **Use Whiteboarding Tools:** Leverage digital whiteboarding tools to plan work items across sprints. This helps visualize and organize tasks effectively.
+
+- **Gather Team Inputs:** Solicit input from team members to identify and allocate technical debt or backlog items they want to address in the upcoming Program Increment (PI). Check if these can be accommodated.
+
+- **Include Focus Areas:** Add sections for different focus areas, such as CI/CD, security, etc., to ensure all critical aspects are covered.
+
+- **Prioritize the Backlog:** Review and prioritize the backlog to identify potential items that can address gaps in the PI planning.
+
+- **Publish Planning:** Share the planning with dependent teams to review and raise any missing items or concerns.
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/pi-planning-board.png">
@@ -312,29 +341,34 @@ Problems faced:
 {% include advertisement.html %}
 ## Task Assignment
 
-Ideal state:
-- Team members pick tasks to work on as they finish each item
-- Team members indicate if they are blocked/need additional support
-- Team members are aware of the priority tasks
+**Ideal State:**
 
-Reality:
-- Team members wait for tasks to be assigned
-- Team members take additional time before they reach a conclusion they they need more support/mention it only when asked
-- Team members wait for standup to raise that they are blocked - instead they could have quickly mentioned in group chat
-- Team members work on low priority items/not aware of priority
+- **Self-Assignment:** Team members choose tasks as they complete previous ones.
+- **Support Requests:** Team members promptly indicate if they are blocked or need additional support.
+- **Priority Awareness:** Team members are aware of and work on priority tasks.
 
-What I did:
-- To go to the ideal target state, we need to go step by step - so started assingning tasks explicitly to team members while working to develop a culture where members pick tasks themselves based on priorities
-- If there is a sense that a team member seems to be struggling or taking more time to deliver, check with them if they need more support or swap tasks as required
-- Sort the work items in the sprint board based on priority so team members always pick from the top
-- Incase, the priority keeps changing - have a weekly Monday call to clarify the priority items for the week
+**Reality:**
 
-Problems faced:
-- Team members don't want to work on a particular task - boring/trivial/other reasons - but at the end of the day we are paid to do it and someone has to work on it
-- Multiple team members interested to take up same work item - determine who to assign based on various factors such as priorities, previous work assignments etc.
+- **Waiting for Assignments:** Team members often wait for tasks to be assigned.
+- **Delayed Support Requests:** They may delay mentioning support needs until asked.
+- **Blocked Communication:** Team members might wait for the standup to report blocks instead of using group chat.
+- **Priority Confusion:** Team members might work on low-priority items without knowing the priorities.
+
+**What I Did:**
+
+- **Explicit Task Assignment:** Started by assigning tasks explicitly to team members while fostering a culture where they pick tasks based on priorities.
+- **Support and Task Swapping:** If a team member struggles or delays, check if they need more support or consider swapping tasks.
+- **Prioritize Work Items:** Organize the sprint board with tasks sorted by priority so team members pick from the top.
+- **Weekly Priority Calls:** Hold a weekly Monday call to clarify priority items if they change frequently.
+
+**Problems Faced:**
+
+- **Task Disinterest:** Some team members may avoid certain tasks (e.g., boring or trivial ones). Remind them that all tasks are part of the job.
+- **Competing Interests:** Multiple team members may be interested in the same task. Assign based on factors like priority and past assignments.
 
 {% include donate.html %}
 {% include advertisement.html %}
+
 ## Design Discussions/Spikes
 
 - Sometimes team members jump on a hype train/trending tech/pick something they learnt in a course and decide to use that approach for a story
