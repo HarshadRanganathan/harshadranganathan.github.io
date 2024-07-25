@@ -371,12 +371,17 @@ Use a tool of your choice to manage retrospectives with columns such as **Start*
 
 ## Design Discussions/Spikes
 
-- Sometimes team members jump on a hype train/trending tech/pick something they learnt in a course and decide to use that approach for a story
-- Always as part of a spike, ask the team member to come up with the list of approaches they evaluated, pros/cons of each approach, recommendations and schedule a team meeting within an agreed time box
-- Share analysis report with the team in advance before the meeting so that they can read through it and come prepared
-- In the team meeting, evaluate the approaches and recommendation from the team member, ask questions and decide if further analysis needed based on new inputs/risks/impacts
-- Prefer incremental improvements
-- Assess if the solution is unnecessarily complicated/over-engineered
+**Best Practices:**
+
+- **Evaluate Approaches:** When team members propose using new or trending tech, ask them to evaluate various approaches. They should provide a list of options, including pros and cons, and make a recommendation.
+
+- **Prepare for Meetings:** Schedule a team meeting within an agreed time box. Share the analysis report with the team in advance so everyone can review and prepare.
+
+- **Team Evaluation:** In the meeting, review the proposed approaches and recommendations. Discuss any new inputs, risks, or impacts and decide if further analysis is needed.
+
+- **Focus on Incremental Improvements:** Prefer incremental changes over large, disruptive ones.
+
+- **Avoid Over-Engineering:** Assess if the proposed solution is unnecessarily complicated or over-engineered.
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/spike-analysis-template.png">
@@ -388,39 +393,48 @@ Use a tool of your choice to manage retrospectives with columns such as **Start*
     </a>
 </figure>
 
-Problems faced:
-- Theoretical vs Practical analysis
-- Delivery constraints force options
+**Problems Faced:**
+
+- **Theoretical vs Practical:** Challenges may arise when theoretical analysis doesn’t align with practical constraints.
+  
+- **Delivery Constraints:** Delivery timelines or constraints may limit the options available for implementation.
 
 {% include donate.html %}
 {% include advertisement.html %}
 
 ## Technical Backlog
 
-- Prioritise items in the backlog so that you can quickly pick any items/debt the team is interested o work upon to fill any gaps in sprint
-- Work with manager/product owner to have a buffer in the sprint to accommodate tech debt items
+- **Prioritize Items:** Organize backlog items by priority so you can quickly address any tech debt or items the team wants to work on to fill sprint gaps.
 
+- **Buffer for Tech Debt:** Collaborate with the manager or product owner to include a buffer in the sprint to accommodate technical debt.
 
-## JADs
+## JADs (Joint Application Design Sessions)
 
-JADs (Joint Application Design sessions) help to flush out solutions to problems by involving all stakeholders.
+- **Set Agenda:** Prepare and share the agenda in advance.
 
-- Set prior agenda and send it in advance
-- Keep the size of the group small otherwise you will have difficulty reaching conclusions
-- Time box to avoid lengthy discussions leading to less meaningful outcomes
-- Capture meeting notes, decision points and have them stored in code repository/docs for future reference
-- Interrupt politely to have any topics to be taken outside the meeting which is not in scope
-- Sometimes it's better to come with recommendations rather than expecting it from the meeting
-- Discuss with team members to ensure every one are on the same page - last thing you want is your team member pitching something different in the call causing more chaos
-- Try to influence the meeting in the direction you want to take
+- **Small Group Size:** Keep the group small to facilitate decision-making and avoid lengthy discussions.
 
+- **Time Box:** Limit the session duration to ensure discussions remain focused and productive.
+
+- **Capture and Store Notes:** Document meeting notes and decision points, and store them in a code repository or documentation for future reference.
+
+- **Manage Scope:** Politely interrupt to address off-topic discussions outside the meeting.
+
+- **Prepare Recommendations:** It’s often more effective to present recommendations rather than expecting solutions to emerge during the meeting.
+
+- **Ensure Alignment:** Discuss with team members beforehand to ensure everyone is on the same page and avoid conflicting pitches.
+
+- **Influence the Direction:** Guide the meeting to stay on track and achieve desired outcomes.
 
 ## Priorities
 
-- Indicate priorities clearly to the team
-- Order the sprint items based on priorities so that team members pick from the top and work towards the botom
-- Check if team members are struggling with any priority items and get them the required support to avoid delivery delays
-- Indicate to the team as and when priorities change
+- **Clearly Indicate Priorities:** Communicate priorities to the team clearly.
+
+- **Order Sprint Items:** Arrange sprint items by priority so team members tackle high-priority tasks first.
+
+- **Support for Priorities:** Monitor team members’ progress with priority items and provide support as needed to prevent delays.
+
+- **Update on Changes:** Inform the team promptly when priorities shift.
 
 
 ## Team Communication Model
