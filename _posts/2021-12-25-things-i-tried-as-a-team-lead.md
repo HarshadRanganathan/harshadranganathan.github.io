@@ -1,71 +1,55 @@
 ---
 layout: post
 title: "Things I Tried As A Team Lead"
-date: 2022-05-11
+date: 2024-07-25
 excerpt: "Opinionated article on the things I tried as a Team Lead - what worked and what didn't work"
 tag:
 - Team Lead
 comments: true
 ---
 
-## Documentation
+## Documentation: Why It Matters and How to Make It Work
 
-Documentation is one of the important things to be done for any team.
+Documentation is crucial for any team. It keeps information accessible, helps understand system workings, and guides code execution and troubleshooting. 📚
 
-<br/>
-Documentation has many benefits:
-- Information easily accessible for all team members
-- Helps to understand how the system works
-- Helps team members on how to run the code & troubleshoot
-
-and many more...
-
-Also, when people face issues executing a code or take more time to troubleshoot an incident etc. following questions are the first to be asked by managers/leadership:
-
+However, managers often ask:
 - Is it documented?
+- Can we document it so everyone knows?
 
-- Can we document it so that everyone is aware?
+This can shift focus away from solving the real problem.
 
-etc. and they don't focus on solving the real problem.
+Even with documentation, issues can arise:
+- Lack of clarity
+- People not using it
+- Documentation is hard to find
+- Not enough time spent on it
 
-<br/>
-In reality, even if you document things, sometimes teams either don't refer the documentation or still do mistakes etc. for a variety of reasons:
+Despite these challenges, documenting is key. It lets you confidently say, "Yes, it's documented," and directs attention back to solving the problem.
 
-- lack of clarity in the documentation
-- quick to blame nature 
-- not aware that documentation exists 
-- not able to find correct documentation
-- not spending time on reading the documentation
-etc. 
+Without documentation:
+- Team members waste time figuring things out
+- You answer the same questions repeatedly
 
-But nevertheless, it's good to have things documented, so that next time someone raises question around "Is it documented? Maybe we should do that" you could quickly answer that it's already done and show it to them so that they will start to focus on the real problem next.
+Common challenges with documentation include:
+- Time constraints
+- Assumptions about what’s known
+- Not understanding user perspectives
 
-<br/>
-Also, if you don't document:
-
-- team members struggle and spend more time trying to figure out things (it still happens even if you document - for reasons stated above)
-- repeated questions being asked by various teams/members and you end up giving same answers over a period of time
-
-Some challenges that often arise with documentation:
-
-- engineers mention lack of time
-- assumptions that certain things are well known
-- lack of understanding on what's needed from a user/novice/intermediate perspective
-etc.
+Keep your docs clear and accessible to avoid these pitfalls and streamline problem-solving. 🌟
 
 Things that I implemented in my team:
 
-### Microsite/Sharepoint/Confluence Space
+### Choosing the Right Documentation Platform
 
-Depending on the documentation platform that your company uses you could leverage it to maintain a centralized documentation.
+Whether your team uses Microsite, SharePoint, or Confluence, centralizing your documentation is key. I prefer using Microsites created with static site generators like MkDocs or Docusaurus for several reasons:
 
-I prefer Microsites generated with static site generator tools such as mkdocs, docusaurus etc, for reasons being:
+- **Code Repository Integration:** Docs are maintained in a code repo, similar to how engineers manage README files.
+- **Consistency:** Engineers are already familiar with markdown, so it's an easy transition.
+- **Tool Changes:** Switching tools (e.g., from Confluence to SharePoint) can be messy, especially with vendor-specific plugins like draw.io. Static sites avoid these issues.
+- **Review and Feedback:** Documentation can be reviewed through pull requests (PRs), allowing for suggestions and improvements.
+- **Guidelines:** Establish general documentation guidelines with PR templates.
 
-- Docs are maintained in a code repo
-- Engineers write markdowns anyway with README's for each code repo so it's similar thing they have to do with static site generators
-- Enterprises switch tools sometimes e.g. move from Confluence to Sharepoint for pricing, deals etc, and import/export makes things messy. Also, if you were using any vendor specific plugins e.g. draw.io then you might face issues if you can't port your diagrams to the new platform
-- Documentation is reviewable through PR's - you can offer suggestions
-- Establish general documentation guidelines via PR templates
+Using static site generators keeps your documentation organized and adaptable to tool changes. 🌐📄
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/aws-platform-docs.png">
@@ -77,51 +61,48 @@ I prefer Microsites generated with static site generator tools such as mkdocs, d
     </a>
 </figure>
 
-Some general guidelines I established for the team to follow:
 
-1. Use concise headings
-2. Use searchable keywords - e.g. for a troubleshooting guide add the exception message in the doc so that team members can simply search for the exception and find out the remediation steps
-3. Provide code examples 
-4. Leverage code syntax highlighting features
-5. Use screenshots along with textual walkthrough - e.g. how to connect to a database using a software tool
+#### Documentation Guidelines for the Team
 
-   For some folks, walkthrough through screenshots helps to understand things better compared to text. Although this means more maintenance effort since we have to update the screenshots as tools get updated, we need to think it from the end user perspective. Our main aim is to write docs and make it easier for the person reading it to understand things - Not to make it easier for us to write and complete it for namesake - Otherwise, you may still end up having to clarify things via chat.
+Here are some guidelines to make our documentation more effective:
 
-   Even if you add screenshots, it's good to have it written as text to make it searchable.
+- **Use Concise Headings:** Keep headings clear and to the point.
+- **Incorporate Searchable Keywords:** Include terms like exception messages in troubleshooting guides to make searches easier.
+- **Provide Code Examples:** Include code snippets for clarity.
+- **Use Syntax Highlighting:** Enhance readability with code syntax highlighting.
+- **Add Screenshots:** Use screenshots for visual guidance, especially for complex steps like database connections.
 
-   It's a delicate balance between using screenshots and texts. We shouldn't overdo with screenshots - use  it only where necessary - PR reviews help to maintain the balance.
+Screenshots help some users understand better, but remember to update them as tools change. Always balance between text and visuals to ensure documentation remains clear and searchable. PR reviews can help maintain this balance.
 
-6. Provide as much detail as possible
-7. Don't assume people may know something
-8. Preview your changes to ensure they are properly formatted - images are loading - styles are rendered etc.
-9. Read what you've written before raising the PR
+**Additional Tips:**
 
-    Check if what you've written makes sense for a new team member/external team member
-    
-    Check if you've used keywords which would potentially be used for searching the information - if people can't find a document they are going to ping you and take more of your time so it's wise to spend this time upfront
+- **Be Detailed:** Avoid assumptions and provide thorough information.
+- **Preview Changes:** Ensure proper formatting, image loading, and styling before finalizing.
+- **Check for Clarity:** Review your documentation as if you're a new or external team member.
+- **Use Relevant Keywords:** This helps others find your document easily and reduces the need for follow-up queries.
 
+**Challenges:**
 
-Problems faced:
+- **Ongoing Practice:** Engineers need practice to follow these guidelines effectively.
+- **Different Writing Styles:** Allow for individual styles but maintain overall clarity.
+- **Training for New Writers:** Offer guidance and suggestions in PRs to help improve documentation skills.
 
-1. Requires constant practice for engineers to get in the process of writing docs following the guidelines
-2. Each have their own style of writing - don't strictly expect members to follow same style as yours
-3. Team members who are new to writing meaningful/readable docs require more training - guide them with suggestions in PR on how they could improve
+Following these guidelines will help make our docs more useful and user-friendly. 📚📝
 
 {% include donate.html %}
 {% include advertisement.html %}
 
-### Docs Backlog
+### Docs Backlog Management
 
-Create a new backlog for capturing items to be documented. These could be -
+Create a backlog to keep track of documentation needs, including:
 
-- frequently asked questions
-- items pending to be documented
-- architecture designs
-- guideline docs
-- existing docs to be updated for more clarity
-- runbooks
-- troubleshooting guides as new issues encountered
-etc.
+- FAQs
+- Pending Documentation
+- Architecture Designs
+- Guideline Documents
+- Updates for Existing Docs
+- Runbooks
+- Troubleshooting Guides for New Issues
 
 <figure>
     <a href="{{ site.url }}/assets/img/2021/12/github-issues-doc-backlog.png">
@@ -133,9 +114,13 @@ etc.
     </a>
 </figure>
 
-Problems faced:
-1. Every team member needs to contribute to the backlog - this requires commitment from team members
-2. Constant reminder needed for team members in standup that any items they debug and resolve, any individual pings they receive for more clarity needs to be added to the backlog so that we can address them, avoid repeated answers and save time spent on support in future
+
+**Challenges:**
+
+- **Team Participation:** Ensuring all team members contribute to the backlog requires commitment.
+- **Regular Reminders:** Use standups to remind team members to add resolved issues and requests for clarity to the backlog. This minimizes repeated answers and saves time on support.
+
+A well-maintained backlog helps keep documentation comprehensive and up-to-date. 📋🛠️
 
 ### Weekly Docs Contribution
 
