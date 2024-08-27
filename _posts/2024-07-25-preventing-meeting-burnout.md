@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "𝐏𝐫𝐞𝐯𝐞𝐧𝐭𝐢𝐧𝐠 𝐌𝐞𝐞𝐭𝐢𝐧𝐠 𝐁𝐮𝐫𝐧𝐨𝐮𝐭 - 𝐌𝐲 𝐆𝐨𝐥𝐝𝐞𝐧 𝐑𝐮𝐥𝐞𝐬 𝐟𝐨𝐫 𝐒𝐭𝐚𝐲𝐢𝐧𝐠 𝐏𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐯𝐞"
+title:  "Preventing Meeting Burnout - My Golden Rules for Staying Productive"
 date:   2024-07-25
 excerpt: "Adopt these five rules to efficiently manage meetings, reduce burnout, and enhance productivity."
 tag:
