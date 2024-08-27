@@ -177,6 +177,7 @@ When deploying the Helm chart, this file will be loaded into the `/etc/alertmana
 
 Finally, configure the email receiver to use the custom email template.
 
+{% raw %}
 ```yaml
 - name: "email"
   email_configs:
@@ -184,6 +185,7 @@ Finally, configure the email receiver to use the custom email template.
     from: "alertmanager@example.com"
     html: '{{ template "custom_email.html" . }}'
 ```
+{% endraw %}
 
 With these steps, your Alertmanager will send concise and clear email alerts, making it easier to act on critical issues.
 
