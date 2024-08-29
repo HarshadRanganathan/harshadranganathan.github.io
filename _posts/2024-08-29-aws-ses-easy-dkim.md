@@ -2,7 +2,7 @@
 layout: post
 title:  "Configuring AWS SES to Send Emails to a Corporate Mail Server Using Easy DKIM"
 date:   2024-08-29
-excerpt: "Optimize your AWS CloudWatch costs by managing log retention settings and leveraging the CloudWatch Logs Infrequent Access log class"
+excerpt: "Learn how to configure Amazon SES with Easy DKIM for secure corporate email delivery."
 tag:
 - AWS SES
 - DKIM
