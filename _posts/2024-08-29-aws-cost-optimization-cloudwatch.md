@@ -84,7 +84,7 @@ AWS offers two classes of log groups to help manage these costs:
         <picture>
             <source type="image/webp" srcset="{{ site.url }}/assets/img/2024/08/create-log-group.webp">
             <source type="image/png" srcset="{{ site.url }}/assets/img/2024/08/create-log-group.png">
-            <img src="{{ site.url }}/assets/img/2024/08/create-log-group" alt="">
+            <img src="{{ site.url }}/assets/img/2024/08/create-log-group.png" alt="">
         </picture>
     </a>
 </figure>
@@ -118,6 +118,16 @@ Detailed setup guide - [https://rharshad.com/aws-cost-optimizations-cost-intelli
      - **Deleting unnecessary log groups.**
      - **Setting appropriate retention periods.**
      - **Adjusting log classes for lower costs.**
+
+<figure>
+    <a href="{{ site.url }}/assets/img/2024/08/log-group-cudos-cost-insights.png">
+        <picture>
+            <source type="image/webp" srcset="{{ site.url }}/assets/img/2024/08/log-group-cudos-cost-insights.webp">
+            <source type="image/png" srcset="{{ site.url }}/assets/img/2024/08/log-group-cudos-cost-insights.png">
+            <img src="{{ site.url }}/assets/img/2024/08/log-group-cudos-cost-insights.png" alt="">
+        </picture>
+    </a>
+</figure>
 
 {% include donate.html %}
 {% include advertisement.html %}

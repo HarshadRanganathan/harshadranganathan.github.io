@@ -28,7 +28,7 @@ When using the Kube Prometheus stack, the default email template in Alertmanager
         <picture>
             <source type="image/webp" srcset="{{ site.url }}/assets/img/2024/08/alerts-sample-email.webp">
             <source type="image/png" srcset="{{ site.url }}/assets/img/2024/08/alerts-sample-email.png">
-            <img src="{{ site.url }}/assets/img/2024/08/alerts-sample-email" alt="">
+            <img src="{{ site.url }}/assets/img/2024/08/alerts-sample-email.png" alt="">
         </picture>
     </a>
 </figure>
