@@ -324,6 +324,11 @@ Java Developer with 7+ years of experience in design, development and maintenanc
         <img src="{{ site.url }}/assets/img/global/cka.png" style="height:115px;width:115px;">
     </a>
   </div>
+  <div class="column">
+    <a href="https://www.credly.com/badges/ec56c989-bf99-4c9f-8cbd-f3c0764734c9/public_url">
+        <img src="{{ site.url }}/assets/img/global/aws-certified-ai-practitioner.png" style="height:115px;width:115px;">
+    </a>
+  </div>
 </div><br/>
 
 ## Work Experience
