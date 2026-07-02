@@ -119,17 +119,6 @@ Here's a decision guide I use:
 | Real-time streaming events from sub-task | Sub-agent via `transfer_to_agent` |
 | Tool count in root agent exceeds ~15 | Refactor subset into sub-agent |
 
-The probe agent's code even has a comment noting the natural evolution path:
-
-```python
-"""
-ADK pattern note:
-  This agent's workflow is a natural SequentialAgent pipeline:
-    create_pod_step → (LoopAgent: poll) → collect_step → cleanup_step
-  Currently using LlmAgent for reasoning flexibility. Switch to SequentialAgent
-  once the workflow is proven stable and deterministic.
-"""
-```
 
 Use `LlmAgent` for reasoning flexibility during development. Migrate to `SequentialAgent` when the workflow is proven and you want determinism guarantees.
 
