@@ -55,16 +55,6 @@ root_agent calls transfer_to_agent("eks_probe_agent")
   → probe_agent completes
 ```
 
-The commit comment in `probe_agent.py` captures this precisely:
-
-```python
-"""
-ADK pattern note:
-  AgentTool wrapping is NOT used — it collapses the sub-agent's stream
-  into a single functionResponse, killing real-time progress.
-"""
-```
-
 ---
 
 {% include donate.html %}
