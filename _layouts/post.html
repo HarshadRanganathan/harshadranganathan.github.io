@@ -48,22 +48,21 @@ layout: compress
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{site.addthis}}"></script>
     {% endif %}
     {% if page.mermaid %}
-    <!-- Mermaid -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        // kramdown/rouge renders ```mermaid fences as <pre><code class="language-mermaid">
-        // mermaid.js only looks for <div class="mermaid">, so convert them first.
-        document.querySelectorAll('code.language-mermaid').forEach(function (codeEl) {
-          var wrapper = codeEl.closest('div.highlighter-rouge') || codeEl.closest('pre');
-          var div = document.createElement('div');
-          div.className = 'mermaid';
-          div.textContent = codeEl.textContent;
-          wrapper.replaceWith(div);
+        document.addEventListener('DOMContentLoaded', function () {
+          var blocks = document.querySelectorAll('code.language-mermaid');
+          blocks.forEach(function (codeEl) {
+            var wrapper = codeEl.closest('div.highlighter-rouge') || codeEl.closest('pre');
+            if (!wrapper) return;
+            var div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeEl.textContent;
+            wrapper.replaceWith(div);
+          });
+          mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
+          mermaid.run();
         });
-        mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
-        mermaid.run();
-      });
     </script>
     {% endif %}
 </body>
