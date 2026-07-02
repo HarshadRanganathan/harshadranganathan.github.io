@@ -214,6 +214,9 @@ A 65× reduction for this query pattern, with no change in answer quality.
 
 ---
 
+{% include donate.html %}
+{% include advertisement.html %}
+
 ## The Filtering Stack: Order of Operations
 
 When multiple filters apply to a single tool call, order matters for efficiency. Each layer should reduce what the next layer has to process:
@@ -363,6 +366,9 @@ Both layers need filtering: the serializer for the model's own optional fields, 
 Null fields aren't just token waste — they're **semantic noise**. When the model reads `{"name": "argocd", "namespace": null, "labels": null, "annotations": null}`, it has to reason "these are null, meaning not applicable" before it can get to the signal. Across hundreds of resources in a multi-cluster scan, that's the model's attention being repeatedly pulled toward noise instead of the answer. Clean JSON — `{"name": "argocd", "status": {"phase": "Active"}}` — gives it exactly what it needs and nothing else.
 
 ---
+
+{% include donate.html %}
+{% include advertisement.html %}
 
 ## Fixing TPM at the Source
 
