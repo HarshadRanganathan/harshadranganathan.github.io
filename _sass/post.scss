@@ -23,3 +23,28 @@ right: -30px;
   // visibility: visible;
   display: block;
 }
+/* Mermaid diagram readability + centering inside post content */
+.content {
+  .mermaid-readable {
+    margin: 1.5rem auto;
+    padding: 1rem;
+    border-radius: 12px;
+    background: #0b1220;
+    overflow-x: auto;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .mermaid-readable svg {
+    display: block;
+    margin: 0 auto;
+    min-width: 1300px; // desktop readability
+    height: auto;
+  }
+
+  @media (max-width: 900px) {
+    .mermaid-readable svg {
+      min-width: 950px; // still readable on mobile/tablet with horizontal scroll
+    }
+  }
+}
