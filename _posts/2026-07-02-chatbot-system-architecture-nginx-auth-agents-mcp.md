@@ -9,6 +9,7 @@ tag:
 - Nginx Reverse Proxy
 - Azure Entra ID Authentication
 - Model Context Protocol
+mermaid: true
 comments: true
 ---
 # Anatomy of a Streaming Chat Request: Browser, Nginx, Auth Gateway, Agents, and MCP
