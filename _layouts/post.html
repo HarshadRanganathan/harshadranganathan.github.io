@@ -50,19 +50,49 @@ layout: compress
     {% if page.mermaid %}
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          var blocks = document.querySelectorAll('code.language-mermaid');
-          blocks.forEach(function (codeEl) {
-            var wrapper = codeEl.closest('div.highlighter-rouge') || codeEl.closest('pre');
-            if (!wrapper) return;
-            var div = document.createElement('div');
-            div.className = 'mermaid';
-            div.textContent = codeEl.textContent;
-            wrapper.replaceWith(div);
-          });
-          mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
-          mermaid.run();
-        });
+    document.addEventListener('DOMContentLoaded', function () {
+      var blocks = document.querySelectorAll('code.language-mermaid');
+      blocks.forEach(function (codeEl) {
+        var wrapper = codeEl.closest('div.highlighter-rouge') || codeEl.closest('pre');
+        if (!wrapper) return;
+        var div = document.createElement('div');
+        div.className = 'mermaid mermaid-readable';
+        div.textContent = codeEl.textContent;
+        wrapper.replaceWith(div);
+      });
+
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'base',
+        securityLevel: 'loose',
+        flowchart: {
+          useMaxWidth: false,
+          htmlLabels: true,
+          curve: 'basis',
+          nodeSpacing: 55,
+          rankSpacing: 80,
+          padding: 12
+        },
+        themeVariables: {
+          fontFamily: 'Inter, Segoe UI, Arial, sans-serif',
+          fontSize: '18px',
+          primaryColor: '#1f3a8a',
+          primaryTextColor: '#f8fafc',
+          primaryBorderColor: '#60a5fa',
+          lineColor: '#93c5fd',
+          secondaryColor: '#0f172a',
+          secondaryTextColor: '#e2e8f0',
+          secondaryBorderColor: '#38bdf8',
+          tertiaryColor: '#14532d',
+          tertiaryTextColor: '#ecfdf5',
+          tertiaryBorderColor: '#4ade80',
+          clusterBkg: '#0b1220',
+          clusterBorder: '#334155'
+        }
+      });
+
+      mermaid.run();
+    });
     </script>
     {% endif %}
 </body>
