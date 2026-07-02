@@ -113,6 +113,9 @@ Three details in this topology matter as much as the request-hop mechanics do:
 
 ---
 
+{% include donate.html %}
+{% include advertisement.html %}
+
 ## Hop 1: Nginx — Static Assets and a Buffering-Off Proxy
 
 The frontend container serves the compiled React SPA and reverse-proxies `/api/*` to the backend, per `frontend/nginx.conf`:
@@ -221,6 +224,8 @@ return StreamingResponse(stream_with_client(), status_code=response.status_code,
 `client.send(req, stream=True)` plus `aiter_bytes()` means httpx never materializes the full agent response in memory before forwarding — each chunk is re-emitted as it arrives. Using `client.get()`/`client.post()` here instead would buffer the entire SSE stream and turn a "typing" experience into a single delayed blob, even with nginx buffering already disabled. The `finally` block closing both the response and the client matters too — SSE connections are long-lived, and a client disconnect mid-stream (closing the browser tab) has to release both sockets or they leak.
 
 ---
+{% include donate.html %}
+{% include advertisement.html %}
 
 ## Hop 4: Session Setup, Then the Agent Call
 
