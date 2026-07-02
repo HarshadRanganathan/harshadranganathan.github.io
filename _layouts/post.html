@@ -47,5 +47,24 @@ layout: compress
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{site.addthis}}"></script>
     {% endif %}
+    {% if page.mermaid %}
+    <!-- Mermaid -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // kramdown/rouge renders ```mermaid fences as <pre><code class="language-mermaid">
+        // mermaid.js only looks for <div class="mermaid">, so convert them first.
+        document.querySelectorAll('code.language-mermaid').forEach(function (codeEl) {
+          var wrapper = codeEl.closest('div.highlighter-rouge') || codeEl.closest('pre');
+          var div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = codeEl.textContent;
+          wrapper.replaceWith(div);
+        });
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
+        mermaid.run();
+      });
+    </script>
+    {% endif %}
 </body>
 </html>
