@@ -158,9 +158,8 @@ Nginx never sees the JWT's contents; it just forwards the `Authorization` header
 
 | Check | Source | Effect |
 |---|---|---|
-| `ALLOWED_GROUPS` | Any of 3 known Entra group UUIDs | Gatekeeper — reject anyone outside the platform entirely |
-| `CLOUD_AGENT_GROUPS` | Subset of the above | Data developers are excluded from cost/EKS/CloudTrail agents |
-| `AGENT_ALLOWED_ROLE_KEYS` | Per-agent role map | Data agents require data-developer or admin; other SSO agents accept any allowed role |
+| `ALLOWED_GROUPS` | Entra group UUIDs | Gatekeeper — reject anyone outside the platform entirely |
+| `CLOUD_AGENT_GROUPS` | Subset of the above | Only Infra team can access these agents |
 
 This is the only place group membership is checked. Once a request passes, the gateway **re-forwards the original headers unmodified** to the target agent — agents themselves never re-validate the JWT.
 
